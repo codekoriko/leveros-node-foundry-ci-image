@@ -2,14 +2,17 @@ name: Deploy Images to GHCR
 
 env:
     REGISTRY: ghcr.io
-    # Will resolve to foundry-rs/foundry
     IMAGE_NAME: ${{ github.repository }}
 
 on:
   push:
     branches:
       - master
-  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  # Trigger without any parameters a proactive rebuild
+  workflow_dispatch: {}
+  workflow_call:
 
 jobs:
       push-node-forge-image:
