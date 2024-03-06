@@ -1,8 +1,8 @@
 # CI-CD image for hardhat-foundry
 
-Needed to run forge & hardhat unittest in CI-CD pipelines.
-
-Simply merges node:20 and ghcr.io/foundry-rs/foundry:latest
+- Needed to run forge & hardhat unittest in CI-CD pipelines.
+- Simply merges node:20 and ghcr.io/foundry-rs/foundry:latest.
+- It is being rebuilt everyday with the lastest foundry version.
 
 ## GitLab usage
 
