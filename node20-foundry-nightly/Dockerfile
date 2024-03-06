@@ -4,6 +4,9 @@ FROM ghcr.io/foundry-rs/foundry:latest AS foundry
 # Use an official Node.js base image
 FROM node:20
 
+# making it public
+LABEL org.opencontainers.image.source="https://github.com/codekoriko/leveros-node-foundry-ci-image"
+
 # Copy Foundry binaries from the Foundry image
 COPY --from=foundry /usr/local/bin/forge /usr/local/bin/forge
 COPY --from=foundry /usr/local/bin/cast /usr/local/bin/cast
