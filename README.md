@@ -4,9 +4,9 @@ Needed to run forge & hardhat unittest in CI-CD pipelines.
 
 Simply merges node:20 and ghcr.io/foundry-rs/foundry:latest
 
-## GitLab usage:
+## GitLab usage
 
-```
+```yaml
 include:
   - template: Security/SAST.gitlab-ci.yml
 
@@ -26,10 +26,12 @@ sast:
   # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
   stage: test-forge
 
-test-forge:
+test-forge-job:
+  stage: test-forge
   image: ghcr.io/codekoriko/node20-foundry-nightly:latest
   script:
     - npm i
     - forge install
     - forge test -vvv
+
 ```
