@@ -11,6 +11,3 @@ COPY --from=foundry /usr/local/bin/anvil /usr/local/bin/anvil
 
 # Set the working directory in the container
 WORKDIR /app
-
-# Copy your project files into the Docker image
-COPY . .
